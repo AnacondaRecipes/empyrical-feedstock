@@ -13,6 +13,8 @@ source:
 
 build:
   number: 0
+  # Last update of this package was 5 years ago, it cannot support build with newer python versions
+  # skip: true # [py>312]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
