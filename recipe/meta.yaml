@@ -14,7 +14,7 @@ source:
 build:
   number: 0
   # Last update of this package was 5 years ago, it cannot support build with newer python versions
-  # skip: true # [py>312]
+  skip: true # [py>312]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
@@ -44,7 +44,7 @@ test:
   commands:
     - pip check
     - python -c "from importlib.metadata import version as v; assert v('empyrical')=='{{ version }}'"
-    - ./runtests.py
+    - python runtests.py
 
 about:
   home: https://github.com/quantopian/empyrical
